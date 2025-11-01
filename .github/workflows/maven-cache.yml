@@ -1,4 +1,5 @@
 name: Java CI with Maven
+
 on:
  push:
 concurrency:
@@ -20,13 +21,13 @@ jobs:
 
       distribution: 'temurin'
 
-     cache: maven
+      cache: maven
 
-  - name: Cache Maven Dependencies
-    uses: actions/cache@v3
-    with:
-     path: ~/.m2
-     key: ${{ runner.os }}-cache
+   - name: Cache Maven Dependencies
+     uses: actions/cache@v3
+     with:
+      path: ~/.m2
+      key: ${{ runner.os }}-cache
 
-  - name: Build with Maven
-   run: mvn -B package --file pom.xml
+   - name: Build with Maven
+     run: mvn -B package --file pom.xml
